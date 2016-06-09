@@ -6,17 +6,22 @@
   <%= @article.text.html_safe %>
 
   <br/>
-  <hr/>
+</div>
 
+<hr/>
+
+<div class="container">
   <h3>Comments</h3>
-  <% @article.comments.each do |comment| %>
+  <div class="container">
+    <% @article.comments.each do |comment| %>
 
-      <strong>Commenter:</strong>
-      <%= comment.commenter %><br/>
-      <%= comment.body.html_safe %>
-      <br/><br/>
+        <strong>User:</strong>
+        <%= comment.user %><br/>
+        <%= comment.body.html_safe %>
+        <br/><br/>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
 
 <hr/>
@@ -25,8 +30,8 @@
   <h2>Add a comment:</h2><br/>
   <%= form_for([@article, @article.comments.build]) do |f| %>
       <div class="form-group">
-        <%= f.label :commenter %><br/>
-        <%= f.text_field :commenter, :class => "form-control" %>
+        <%= f.label :user %><br/>
+        <%= f.text_field :user, :class => "form-control" %>
       </div>
 
       <div class="form-group">
