@@ -17,7 +17,9 @@
 
         <strong>User:</strong>
         <%= comment.user %><br/>
-        <%= comment.body.html_safe %>
+        <blockquote>
+          <%= comment.body.html_safe %>
+        </blockquote>
         <br/><br/>
 
     <% end %>
