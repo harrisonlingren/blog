@@ -15,11 +15,12 @@
   <div class="container">
     <% @article.comments.each do |comment| %>
 
-        <strong>User:</strong>
-        <%= comment.user %><br/>
-        <blockquote>
+        <h5>
+          <%= comment.user %>
+        </h5>
+        <div class="container">
           <%= comment.body.html_safe %>
-        </blockquote>
+        </div>
         <br/><br/>
 
     <% end %>
