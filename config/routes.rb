@@ -6,9 +6,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   resources :articles do
-	resources :comments
-	end
+    resources :comments
+  end
   root 'welcome#index'
+
+  if Rails.env.production?
+    get '404', :to => 'welcome#page_not_found'
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
