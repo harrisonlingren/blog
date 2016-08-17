@@ -22,8 +22,10 @@ module Blog
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-
     config.exceptions_app = self.routes
+
+    # Initializes a Markdown parser
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
 
   end
 end
