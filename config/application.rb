@@ -24,8 +24,5 @@ module Blog
     config.active_record.raise_in_transactional_callbacks = true
     config.exceptions_app = self.routes
 
-    # Initializes a Markdown parser
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, autolink: true, tables: true, highlighted: true, strikethrough: true, superscript: true, underline: true, fenced_code_blocks: true, escape_html: true)
-
   end
 end

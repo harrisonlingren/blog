@@ -3,7 +3,7 @@
     <%= @post.title %>
   </h2>
 
-  <%= markdown.render(@post.text) %>
+  <%= markdown(@post.text) %>
 
   <br/>
 </div>
@@ -19,7 +19,7 @@
           <%= comment.user %>
         </strong></h5>
         <div class="container">
-          <%= markdown.render(comment.body) %>
+          <%= markdown(comment.body) %>
         </div>
         <br/>
 
@@ -30,7 +30,11 @@
 <hr/>
 
 <div class="container">
-  <h2>Add a comment:</h2><br/>
+  <h2>Add a comment
+    <a href="#" data-toggle="tooltip" data-placement="auto right" title="You can use Markdown here!">
+      <span class="glyphicon glyphicon-info-sign" style="font-size: 0.75em; !important;"></span>
+    </a>
+  </h2><br/>
   <%= form_for([@post, @post.comments.build]) do |f| %>
       <div class="form-group">
         <%= f.label :user %><br/>
@@ -39,7 +43,7 @@
 
       <div class="form-group">
         <%= f.label :body %><br/>
-        <%= f.text_area :body %>
+        <%= f.text_area :body, :class => "form-control" %>
       </div>
 
       <div class="form-group">

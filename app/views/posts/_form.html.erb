@@ -20,7 +20,11 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :text %><br/>
+      <%= f.label :text %>
+      <a href="#" data-toggle="tooltip" data-placement="auto right" title="You can use Markdown here!">
+        <span class="glyphicon glyphicon-info-sign"></span>
+      </a>
+      <br/>
       <%= f.text_area :text, :class => "form-control wysihtml5" %>
     </div>
 
