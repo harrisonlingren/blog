@@ -12,11 +12,11 @@
   <tbody>
   <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.text.html_safe %></td>
-        <td><%= link_to 'Show', post_path(post) %> |</td>
-        <td><%= link_to 'Edit', edit_post_path(post) %> |</td>
-        <td><%= link_to 'Delete', post_path(post),
+        <td class='col-md-4'><%= post.title %></td>
+        <td class='col-md-5'><%= post.text.h %></td>
+        <td class='col-md-1'><%= link_to 'Show', post_path(post) %> </td>
+        <td class='col-md-1'><%= link_to 'Edit', edit_post_path(post) %> </td>
+        <td class='col-md-1'><%= link_to 'Delete', post_path(post),
                         method: :delete,
                         data: {confirm: 'Are you sure?'} %></td>
       </tr>
