@@ -1,9 +1,9 @@
 <div class="container">
   <h2>
-    <%= @article.title %>
+    <%= @post.title %>
   </h2>
 
-  <%= @article.text.html_safe %>
+  <%= @post.text.html_safe %>
 
   <br/>
 </div>
@@ -13,7 +13,7 @@
 <div class="container">
   <h3>Comments</h3>
   <div class="container">
-    <% @article.comments.each do |comment| %>
+    <% @post.comments.each do |comment| %>
 
         <h5><strong>
           <%= comment.user %>
@@ -31,7 +31,7 @@
 
 <div class="container">
   <h2>Add a comment:</h2><br/>
-  <%= form_for([@article, @article.comments.build]) do |f| %>
+  <%= form_for([@post, @post.comments.build]) do |f| %>
       <div class="form-group">
         <%= f.label :user %><br/>
         <%= f.text_field :user, :class => "form-control" %>
@@ -52,10 +52,9 @@
 <hr/>
 
 <div class="container">
-  <%= link_to 'Edit', edit_article_path(@article), :class => "btn btn-default" %>
-  <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
+  <%= link_to 'Edit', edit_post_path(@post), :class => "btn btn-default" %>
+  <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-default" %>
   <br/><br/>
-  <%= link_to 'Back', articles_path, :class => "btn btn-default" %>
+  <%= link_to 'Back', posts_path, :class => "btn btn-default" %>
   <br/><br/>
 </div>
-
