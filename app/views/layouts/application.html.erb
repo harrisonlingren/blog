@@ -15,13 +15,6 @@
 </head>
 
 <body>
-  <!-- For tooltips -->
-  <script>
-    $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-    });
-  </script>
-
   <div class="container">
     <div class="jumbotron">
       <h1>The Forum</h1>
@@ -69,6 +62,13 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  
+  <!-- For tooltips -->
+  <script>
+    $(document).ready(function() {
+      $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+    }); 
+  </script>
+  
 </body>
 </html>
