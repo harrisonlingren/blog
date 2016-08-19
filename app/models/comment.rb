@@ -5,10 +5,10 @@ end
 class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
+      t.datetime :created_at
       t.string :user
       t.text :body
       t.references :post, index: true, foreign_key: true
-
       t.timestamps null: false
     end
   end

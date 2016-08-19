@@ -3,6 +3,10 @@
     <%= @post.title %>
   </h2>
 
+  <h4>
+    <%= @post.time %>
+  </h4>
+
   <%= markdown(@post.text) %>
 
   <br/>
@@ -16,7 +20,7 @@
     <% @post.comments.each do |comment| %>
 
         <h5><strong>
-          <%= comment.user %>
+          <%= comment.user %> @ <%= comment.created_at %>
         </strong></h5>
         <div class="container">
           <%= markdown(comment.body) %>
